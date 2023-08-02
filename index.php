@@ -27,10 +27,10 @@
                             <a class="nav-link <?php echo !isset($_GET['page']) ? 'active' : '' ; ?>" aria-current="page" href="<?php echo base_url(); ?> ">Homepage</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php echo isset($_GET['page']) && $_GET['page'] == 'santri' ? 'active' : '' ; ?>" aria-current="page" href="<?php echo base_url()."index.php?page=santri"; ?>">Data Santri</a>
+                            <a class="nav-link <?php echo isset($_GET['page']) && $_GET['page'] == 'petugas' ? 'active' : '' ; ?>" aria-current="page" href="<?php echo base_url()."index.php?page=petugas"; ?>">Data Petugas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php echo isset($_GET['page']) && $_GET['page'] == 'petugas' ? 'active' : '' ; ?>" aria-current="page" href="<?php echo base_url()."index.php?page=petugas"; ?>">Data Petugas</a>
+                            <a class="nav-link <?php echo isset($_GET['page']) && $_GET['page'] == 'daftar' ? 'active' : '' ; ?>" aria-current="page" href="<?php echo base_url()."index.php?page=daftar"; ?>">Daftar Harga</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?php echo isset($_GET['page']) && $_GET['page'] == 'laundry' ? 'active' : '' ; ?>" aria-current="page" href="<?php echo base_url()."index.php?page=laundry"; ?>">LAUNDRY</a>

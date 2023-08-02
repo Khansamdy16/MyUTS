@@ -2,17 +2,19 @@
 $act = $_GET['act'] ;
 
 if($act == 'save') {
-    $kode = $_POST['kode'] ;
+    $nourut = $_POST['nourut'] ;
     $tanggal = $_POST['tanggal'] ;
     $nama = $_POST['nama'] ;
     $asrama = $_POST['asrama'] ;
     $jenis = $_POST['jenis'] ;
-    $berat= $_POST['$berat'] ;
     $harga = $_POST['harga'] ;
+    $berat= $_POST['$berat'] ;
+    $totalharga = $_POST['totalharga'] ;
     $petugas = $_POST['petugas'] ;
-
-    $query = $db->query("INSERT INTO laundry (kode, tanggal, nama, asrama, jenis, berat, harga,  petugas) 
-                VALUES ('$kode', '$tanggal', '$nama', '$asrama', '$jenis', '$berat', '$harga', '$petugas') ") ;
+    $tanggal2 = $_POST['tanggal2'] ;
+    
+    $query = $db->query("INSERT INTO laundry (nourut, tanggal, nama, asrama, jenis, harga, berat, totalharga,  petugas, tanggal2) 
+                VALUES ('$nourut', '$tanggal', '$nama', '$asrama', '$jenis','$harga', '$berat', '$totalharga', '$petugas', '$tanggal2') ") ;
 
 if($query) {
     echo "<script>
@@ -29,25 +31,29 @@ else {
 
 }
 else if($act == 'update'){
-    $kode_old = $_POST['kode_old'] ;
-    $kode = $_POST['kode'] ;
+    $nourut_old = $_POST['nourut_old'] ;
+    $nourut = $_POST['nourut'] ;
     $tanggal = $_POST['tanggal'] ;
     $nama = $_POST['nama'] ;
     $asrama = $_POST['asrama'] ;
     $jenis = $_POST['jenis'] ;
-    $berat= $_POST['berat'] ;
     $harga = $_POST['harga'] ;
+    $berat= $_POST['$berat'] ;
+    $totalharga = $_POST['totalharga'] ;
     $petugas = $_POST['petugas'] ;
+    $tanggal2 = $_POST['tanggal2'] ;
 
-        $query = $db -> query ("UPDATE laundry SET kode = '$kode',
+        $query = $db -> query ("UPDATE laundry SET nourut = '$nourut',
                                                 tanggal = '$tanggal',
                                                 nama = '$nama',
                                                 asrama = '$asrama',
                                                 jenis = '$jenis',
-                                                berat = '$berat',
                                                 harga = '$harga',
+                                                berat = '$berat',
+                                                totalharga = '$totalharga',
                                                 petugas = '$petugas'
-                                                WHERE kode='$kode_old' ") ; 
+                                                tanggal2 = '$tanggal2'
+                                                WHERE nourut='$nourut_old' ") ; 
 
         if($query) {
             echo "<script>
@@ -64,8 +70,8 @@ else if($act == 'update'){
     
 }
 else if($act == 'hapus'){
-    $kode =$_GET ['kode'] ;
-    $query = $db -> query("DELETE FROM laundry WHERE kode = '$kode' ") ;
+    $nourut =$_GET ['nourut'] ;
+    $query = $db -> query("DELETE FROM laundry WHERE nourut = '$nourut' ") ;
         if($query) {
             echo "<script>
                 alert('Data sukses dihapus');

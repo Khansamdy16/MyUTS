@@ -1,11 +1,11 @@
 <?php
 
 $act = isset($_GET['act']) ? $_GET['act'] : false ;
-$kode = isset ($_GET['kode']) ? $_GET['kode'] : false ;
+$kode = isset ($_GET['nourut']) ? $_GET['nourut'] : false ;
 if($act == 'edit') { 
     $url = base_url(). "index.php?page=laundry&act=update" ;
-    if($kode){
-    $query = $db -> query ("SELECT * FROM laundry WHERE kode = '$kode'");
+    if($nourut){
+    $query = $db -> query ("SELECT * FROM laundry WHERE nourut = '$nourut'");
     $row = $query -> fetch_array ();
     }else{
     echo  "<script>
@@ -25,10 +25,10 @@ if($act == 'edit') {
             </div>
             <div class="card-body">
                 <form action="<?php echo $url; ?> " method="post">
-                    <input type="hidden" name="kode_old" value="<?php echo isset($row) ? $row['kode'] : '' ; ?>">
+                    <input type="hidden" name="nourut_old" value="<?php echo isset($row) ? $row['nourut'] : '' ; ?>">
                         <div class="mb-3">
-                            <label for="kode">  Kode Laundry </label>
-                            <input type="text" class="form-control" name="kode" id="kode" value="<?php echo isset($row) ? $row['kode'] : '' ; ?>">
+                            <label for="nourut">  No. Urut </label>
+                            <input type="text" class="form-control" name="nourut" id="nourut" value="<?php echo isset($row) ? $row['nourut'] : '' ; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="tanggal"> Tanggal </label>
@@ -47,16 +47,24 @@ if($act == 'edit') {
                             <input type="text" class="form-control" name="jenis" id="jenis" value="<?php echo isset($row) ? $row['jenis'] : '' ; ?>">
                         </div>
                         <div class="mb-3">
+                            <label for="harga">  Harga/Kg </label>
+                            <input type="text" class="form-control" name="harga" id="harga" value="<?php echo isset($row) ? $row['harga'] : '' ; ?>">
+                        </div>
+                        <div class="mb-3">
                             <label for="berat">  Berat (KG) </label>
                             <input type="text" class="form-control" name="berat" id="berat" value="<?php echo isset($row) ? $row['berat'] : '' ; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="harga">  Harga </label>
-                            <input type="text" class="form-control" name="harga" id="harga" value="<?php echo isset($row) ? $row['harga'] : '' ; ?>">
+                            <label for="totalharga">  Total harga </label>
+                            <input type="text" class="form-control" name="totalharga" id="totalharga" value="<?php echo isset($row) ? $row['totalharga'] : '' ; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="petugas"> Petugas </label>
                             <input type="text" class="form-control" name="petugas" id="petugas" value="<?php echo isset($row) ? $row['petugas'] : '' ; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tanggal2"> Tanggal Pengambilan </label>
+                            <input type="text" class="form-control" name="tanggal2" id="tanggal2" value="<?php echo isset($row) ? $row['tanggal2'] : '' ; ?>">
                         </div>
                         <div class="mb-3">
                                 <a class="btn btn-danger btn-sm float-start" href="<?php echo base_url() . 'index.php?page=laundry'; ?>">
