@@ -8,7 +8,7 @@ if($act == 'save') {
     $asrama = $_POST['asrama'] ;
     $jenis = $_POST['jenis'] ;
     $harga = $_POST['harga'] ;
-    $berat= $_POST['$berat'] ;
+    $berat= $_POST['berat'] ;
     $totalharga = $_POST['totalharga'] ;
     $petugas = $_POST['petugas'] ;
     $tanggal2 = $_POST['tanggal2'] ;
@@ -38,7 +38,7 @@ else if($act == 'update'){
     $asrama = $_POST['asrama'] ;
     $jenis = $_POST['jenis'] ;
     $harga = $_POST['harga'] ;
-    $berat= $_POST['$berat'] ;
+    $berat= $_POST['berat'] ;
     $totalharga = $_POST['totalharga'] ;
     $petugas = $_POST['petugas'] ;
     $tanggal2 = $_POST['tanggal2'] ;
@@ -51,19 +51,19 @@ else if($act == 'update'){
                                                 harga = '$harga',
                                                 berat = '$berat',
                                                 totalharga = '$totalharga',
-                                                petugas = '$petugas'
+                                                petugas = '$petugas',
                                                 tanggal2 = '$tanggal2'
-                                                WHERE nourut='$nourut_old' ") ; 
+                                                WHERE nourut ='$nourut_old' ") ; 
 
         if($query) {
             echo "<script>
-                alert('Data sukses disimpan');
+                alert('Data sukses diubah');
                 window.location.href='".base_url()."index.php?page=laundry' ;
             </script>" ;
         }
         else {
             echo "<script>
-                alert('Data gagal disimpan');
+                alert('Data gagal diubah');
                 window.location.href='".base_url()."index.php?page=laundry&act=input' ;
             </script>" ;
         }

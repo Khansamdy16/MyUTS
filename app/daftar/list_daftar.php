@@ -11,7 +11,6 @@
                     <table class = "table table-striped">
                         <thead>
                             <tr>
-                                <th>No</th>
                                 <th>Kode Jenis</th>
                                 <th>Jenis</th>
                                 <th>Harga</th>
@@ -21,11 +20,9 @@
                         </thead>
                         <tbody>
                             <?php
-                            $no = 1 ;
                             while($row = $query->fetch_array()) {
                             ?>
                                 <tr>
-                                    <td><?php echo $no++; ?></td>
                                     <td><?php echo $row['kdjenis']; ?></td>
                                     <td><?php echo $row['jenis']; ?></td>
                                     <td><?php echo $row['harga']; ?></td>

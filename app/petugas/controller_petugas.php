@@ -48,7 +48,7 @@ else if($act == 'update'){
         } else {
             echo "<script>
                 alert('Data gagal diubah');
-                window.location.href='".base_url()."index.php?page=petugas' ; ;
+                window.location.href='".base_url()."index.php?page=petugas' ; 
             </script>" ;
         }
     

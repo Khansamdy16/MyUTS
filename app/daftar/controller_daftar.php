@@ -34,7 +34,7 @@ else if($act == 'update'){
         $query = $db -> query ("UPDATE daftar SET kdjenis = '$kdjenis',
                                                 jenis = '$jenis',
                                                 harga = '$harga',
-                                                hari = '$hari',
+                                                hari = '$hari'
                                                 WHERE kdjenis='$kdjenis_old' ") ; 
 
         if($query) {
@@ -45,7 +45,7 @@ else if($act == 'update'){
         } else {
             echo "<script>
                 alert('Data gagal diubah');
-                window.location.href='".base_url()."index.php?page=daftar' ; ;
+                window.location.href='".base_url()."index.php?page=daftar' ; 
             </script>" ;
         }
     

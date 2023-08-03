@@ -1,7 +1,7 @@
 <?php
 
 $act = isset($_GET['act']) ? $_GET['act'] : false ;
-$kode = isset ($_GET['nourut']) ? $_GET['nourut'] : false ;
+$nourut = isset ($_GET['nourut']) ? $_GET['nourut'] : false ;
 if($act == 'edit') { 
     $url = base_url(). "index.php?page=laundry&act=update" ;
     if($nourut){
@@ -32,7 +32,7 @@ if($act == 'edit') {
                         </div>
                         <div class="mb-3">
                             <label for="tanggal"> Tanggal </label>
-                            <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?php echo isset($row) ? $row['tanggal'] : '' ; ?>">
+                            <input type="date" class="form-control" name="tanggal" id="tanggal" value="<?php echo isset($row) ? $row['tanggal'] : '' ; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="nama">  Nama </label>
@@ -64,7 +64,7 @@ if($act == 'edit') {
                         </div>
                         <div class="mb-3">
                             <label for="tanggal2"> Tanggal Pengambilan </label>
-                            <input type="text" class="form-control" name="tanggal2" id="tanggal2" value="<?php echo isset($row) ? $row['tanggal2'] : '' ; ?>">
+                            <input type="date" class="form-control" name="tanggal2" id="tanggal2" value="<?php echo isset($row) ? $row['tanggal2'] : '' ; ?>">
                         </div>
                         <div class="mb-3">
                                 <a class="btn btn-danger btn-sm float-start" href="<?php echo base_url() . 'index.php?page=laundry'; ?>">
